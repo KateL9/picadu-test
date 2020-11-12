@@ -50,11 +50,10 @@ const setUsers = {
     },
     signUp(email, password, handler) {
         if (!this.getUser(email)) {
-            const user = { email, password, displayName: username };
+            const user = { email, password, displayName: this.getUsername(email) };
             listUsers.push(user);
             this.authorizedUser(user);
             handler();
-            var username = getUsername();
         } else {
             alert('The user already exsists')
         }
