@@ -66,7 +66,9 @@ const setUsers = {
         }
         if (!this.getUser(email)) {
             const user = { email, password, displayName: this.getUsername(email) };
+
             // displayName: email.substring(0, email.indexOf('@'))
+
             listUsers.push(user);
             this.authorizedUser(user);
             handler();
@@ -251,3 +253,4 @@ const init = () => {
 };
 
 document.addEventListener('DOMContentLoaded', init);
+
